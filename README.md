@@ -1,4 +1,4 @@
-# 📧 Change E-mail AI
+# 📧 Professional Email Rewriter
 
 > Aplicación web que mejora borradores de correos electrónicos utilizando **IA Local** mediante **Ollama** y el modelo **Llama 3.2**.
 

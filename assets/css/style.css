@@ -105,6 +105,77 @@ body.dark-mode {
   transform: scale(1.02);
 }
 
+/* ==========================================
+   BARRA SUPERIOR (TOP HEADER) & LOGO
+   ========================================== */
+.top-header {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+/* Botón de Modo Oscuro (Alineado a la izquierda) */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #e2e8f0;
+  color: var(--text-main);
+}
+
+/* Marca, Logo y Versión (Alineados a la derecha) */
+.brand-version {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ajuste del Logo */
+.brand-version img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain; /* Garantiza que la imagen no se deforme */
+  border-radius: 6px;
+}
+
+.brand-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.version-tag {
+  background-color: #e2e8f0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Ajuste Responsive para pantallas muy pequeñas (Móviles) */
+@media (max-width: 480px) {
+  .brand-name {
+    display: none; /* En pantallas muy pequeñas oculta el texto largo para que no colapse */
+  }
+}
+
 /* Nombre de la web y versión (A la derecha) */
 .brand-version {
   display: flex;
