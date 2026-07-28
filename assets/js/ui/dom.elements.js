@@ -1,0 +1,26 @@
+export const DOM = {
+  userEmailInput: document.getElementById('userEmail'),
+  toneSelect: document.getElementById('toneSelect'),
+  transformBtn: document.getElementById('transformBtn'),
+  btnText: document.getElementById('btnText'),
+  btnSpinner: document.getElementById('btnSpinner'),
+  resultContent: document.getElementById('resultContent'),
+  pdfArea: document.getElementById('pdfArea'),
+  pasteBtn: document.getElementById('pasteBtn'),
+  copyBtn: document.getElementById('copyBtn'),
+  downloadPdfBtn: document.getElementById('downloadPdfBtn'),
+  toastContainer: document.getElementById('toastContainer'),
+  healthBadge: document.getElementById('healthBadge'),
+  healthDot: document.getElementById('healthDot'),
+  healthText: document.getElementById('healthText'),
+  themeToggleBtn: document.getElementById('themeToggleBtn'),
+  themeIcon: document.getElementById('themeIcon'),
+  themeText: document.getElementById('themeText'),
+  appVersionTag: document.getElementById('appVersionTag'),
+  // Panel Métricas
+  statsPanel: document.getElementById('statsPanel'),
+  statModel: document.getElementById('statModel'),
+  statTime: document.getElementById('statTime'),
+  statChars: document.getElementById('statChars'),
+  statWords: document.getElementById('statWords')
+};

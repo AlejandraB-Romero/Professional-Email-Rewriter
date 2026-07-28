@@ -2,47 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Descripción del sitio">
-  <meta name="keywords" content="e-mail, correo, texto, corrector">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Nombre del autor">
-  <meta name="copyright" content="2023, Alejandra Begoña Romero Pérez">
-  <meta name="robots" content="index,follow">
-  <title>Professional Email Rewriter | Corrector con IA Local (Ollama)</title>
+  <title>Change E-mail | Professional Rewriter</title>
   
-  <!-- FAVICON (Icono de la pestaña del navegador) -->
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
-
-  <!-- Librería para la generación de PDF desde el navegador -->
-   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 </head>
 <body>
-  <!-- Cabecera Superior con Modo Oscuro a la izquierda y Versión a la derecha -->
-<div class="top-header">
-  <button id="themeToggleBtn" class="theme-toggle-btn">
-    <span id="themeIcon">🌙</span>
-    <span id="themeText">Modo Oscuro</span>
-  </button>
-  <div class="brand-version">
-    <img src="assets/img/logo.png">
-    <span class="brand-name">Professional Email Rewriter</span>
-    <span class="version-tag">v1.0.0</span>
-  </div>
-</div>
 
-<div class="app-container">
-  <!-- El resto del HTML se mantiene igual -->
-  ...
-<!-- Componente Visual para Mensajes de Error/Notificaciones (Sin usar alert) -->
   <div id="toastContainer" class="toast-container"></div>
 
   <div class="app-container">
+    <!-- Barra Superior -->
+    <div class="top-header">
+      <button id="themeToggleBtn" class="theme-toggle-btn">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Modo Oscuro</span>
+      </button>
+      <div class="brand-version">
+        <img src="assets/img/logo.png" alt="Logo">
+        <span class="brand-name">Professional Email Rewriter</span>
+        <span id="appVersionTag" class="version-tag">v1.0.0</span>
+      </div>
+    </div>
+
+    <!-- Header Principal -->
     <header>
-      <h1>Professional Email Rewriter</h1>
+      <h1>Change E-mail</h1>
       <p>Redacción e-mail profesional impulsada por tu IA Local</p>
-      <div class="status-badge">🟢 Conectado a Ollama (Llama 3.2 Local)</div>
+      <!-- Estado dinámico (Healthcheck) -->
+      <div id="healthBadge" class="status-badge offline">
+        <span id="healthDot">🟡</span> <span id="healthText">Comprobando Ollama...</span>
+      </div>
     </header>
 
     <main class="card">
@@ -55,19 +47,18 @@
 
       <textarea id="userEmail" placeholder="Escribe tu texto borrador aquí... Ej: ola jefe mañan no voy xk toy enfermo me pasas las notas..."></textarea>
 
-      <!-- En index.html, justo encima del botón de transformar -->
-<div class="form-group">
-  <label for="toneSelect">Selecciona el tono del correo:</label>
-  <select id="toneSelect" class="tone-select">
-    <option value="profesional">🏢 Profesional / Ejecutivo</option>
-    <option value="casual">😊 Casual / Cercano</option>
-    <option value="comercial">💼 Comercial / Ventas</option>
-    <option value="legal">⚖️ Legal / Formal</option>
-    <option value="academico">🎓 Académico / Universitario</option>
-    <option value="soporte">🛠️ Soporte Técnico</option>
-  </select>
-</div>
-      <!-- Botón Principal con Spinner de Carga Integrado -->
+      <div class="form-group">
+        <label for="toneSelect">Selecciona el tono del correo:</label>
+        <select id="toneSelect" class="tone-select">
+          <option value="profesional">🏢 Profesional / Ejecutivo</option>
+          <option value="casual">😊 Casual / Cercano</option>
+          <option value="comercial">💼 Comercial / Ventas</option>
+          <option value="legal">⚖️ Legal / Formal</option>
+          <option value="academico">🎓 Académico / Universitario</option>
+          <option value="soporte">🛠️ Soporte Técnico</option>
+        </select>
+      </div>
+
       <button id="transformBtn" class="btn-primary">
         <span id="btnText">🦙 Transformar con IA Local</span>
         <div id="btnSpinner" class="spinner hidden"></div>
@@ -83,12 +74,20 @@
           <div id="resultContent" class="result-content placeholder">Escribe un borrador arriba y pulsa "Transformar con IA Local"...</div>
         </div>
 
+        <!-- Nuevo Panel de Información / Métricas -->
+        <div id="statsPanel" class="stats-panel hidden">
+          <div class="stat-item"><span>Modelo:</span> <strong id="statModel">-</strong></div>
+          <div class="stat-item"><span>Tiempo:</span> <strong id="statTime">0.0s</strong></div>
+          <div class="stat-item"><span>Caracteres:</span> <strong id="statChars">0</strong></div>
+          <div class="stat-item"><span>Palabras:</span> <strong id="statWords">0</strong></div>
+        </div>
+
         <button id="downloadPdfBtn" class="btn-pdf" disabled>📥 Descargar en PDF</button>
       </div>
     </main>
   </div>
 
-  <!-- Script Principal Externalizado -->
-  <script src="assets/js/script.js"></script>
+  <!-- Entrada del módulo ES6 -->
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
