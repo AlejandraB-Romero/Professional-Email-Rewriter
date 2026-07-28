@@ -1,66 +1,121 @@
 # 📧 Professional Email Rewriter
 
-> Aplicación web que mejora borradores de correos electrónicos utilizando **IA Local** mediante **Ollama** y el modelo **Llama 3.2**.
+> Reescribe y mejora correos electrónicos utilizando **Inteligencia Artificial Local** mediante **Ollama** y el modelo **Llama 3.2**, manteniendo la privacidad de los datos al ejecutarse completamente en el ordenador del usuario.
 
-El usuario escribe un borrador, la aplicación envía el texto a una instancia local de Ollama mediante una petición HTTP y devuelve una versión corregida y profesional del correo, permitiendo además copiar el resultado o descargarlo en formato PDF.
-
----
-
-# 🚀 Características
-
-* ✍️ Corrección ortográfica y gramatical mediante IA Local.
-* 🧠 Reescritura profesional de correos electrónicos.
-* 🔒 Procesamiento completamente local (sin enviar datos a servicios externos).
-* 📋 Pegar texto directamente desde el portapapeles.
-* 📄 Copiar el resultado al portapapeles.
-* 📥 Exportar el correo a PDF.
-* 🔄 Indicador de carga mediante spinner.
-* 🔔 Sistema de notificaciones visuales (Toast).
-* 📱 Diseño responsive.
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5\&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3\&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript\&logoColor=black)
+![Ollama](https://img.shields.io/badge/Ollama-Local_AI-000000)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
-# 🖥️ Capturas
+# 📖 Descripción
 
-> Próximamente
+**Professional Email Rewriter** es una aplicación web desarrollada con **HTML, CSS y JavaScript Vanilla** que transforma borradores de correo electrónico en mensajes profesionales utilizando un modelo de lenguaje ejecutado de forma local mediante **Ollama**.
 
-Puedes añadir aquí imágenes de la aplicación en funcionamiento.
+Todo el procesamiento se realiza en el equipo del usuario, sin depender de servicios externos ni enviar información a la nube.
+
+---
+
+# ✨ Características
+
+* ✍️ Corrección ortográfica y gramatical.
+* 🤖 Reescritura mediante IA Local.
+* 🔒 Privacidad total (procesamiento local).
+* 🎯 Selección de diferentes tonos de escritura:
+
+  * Profesional
+  * Casual
+  * Comercial
+  * Legal
+  * Académico
+  * Soporte técnico
+* 📋 Pegar texto desde el portapapeles.
+* 📄 Copiar el resultado.
+* 📥 Exportar a PDF.
+* 🌙 Modo oscuro persistente mediante LocalStorage.
+* 🔔 Sistema de notificaciones Toast.
+* ⏳ Spinner durante el procesamiento.
+* 📊 Estadísticas del texto.
+* ❤️ Comprobación automática del estado de Ollama.
+* 📱 Diseño Responsive.
+
+---
+
+# 💻 Software y herramientas utilizadas
+
+Durante el desarrollo de este proyecto se han utilizado las siguientes herramientas:
+
+| Herramienta            | Uso                                                                  |
+| ---------------------- | -------------------------------------------------------------------- |
+| **Visual Studio Code** | Desarrollo del proyecto y edición del código fuente.                 |
+| **Ollama**             | Ejecución local del modelo de Inteligencia Artificial.               |
+| **Llama 3.2**          | Modelo de lenguaje encargado de reescribir los correos electrónicos. |
+| **Google Chrome**      | Pruebas, depuración e inspección mediante DevTools.                  |
+| **Git**                | Control de versiones del proyecto.                                   |
+| **GitHub**             | Alojamiento del repositorio y publicación del código.                |
+| **html2pdf.js**        | Generación de documentos PDF desde el navegador.                     |
+
+---
+
+# 📦 Dependencias
+
+Este proyecto utiliza las siguientes dependencias externas:
+
+| Dependencia     | Función                                                              |
+| --------------- | -------------------------------------------------------------------- |
+| **html2pdf.js** | Permite exportar el resultado generado por la IA a un documento PDF. |
+
+---
+
+# 🖥️ Entorno de desarrollo
+
+* Sistema operativo: **Windows**
+* Editor de código: **Visual Studio Code**
+* Control de versiones: **Git**
+* Repositorio remoto: **GitHub**
+* IA Local: **Ollama**
+* Modelo utilizado: **Llama 3.2**
+* Navegador de pruebas: **Google Chrome**
+
+---
+
+# 📸 Capturas
+
+## Pantalla principal
+
+> Añadir captura aquí.
 
 ```
-/assets/img/screenshot-home.png
-/assets/img/screenshot-result.png
+assets/img/home.png
+```
+
+## Resultado generado
+
+> Añadir captura aquí.
+
+```
+assets/img/result.png
 ```
 
 ---
 
-# 🛠️ Tecnologías utilizadas
+# 🎥 Demostración
 
-### Frontend
+> Puedes añadir un GIF mostrando el funcionamiento completo de la aplicación.
 
-* HTML5
-* CSS3
-* JavaScript (ES6+)
-
-### APIs
-
-* Fetch API
-* Clipboard API
-
-### Inteligencia Artificial
-
-* Ollama
-* Llama 3.2
-
-### Librerías
-
-* html2pdf.js
+```
+assets/img/demo.gif
+```
 
 ---
 
-# 📁 Estructura del proyecto
+# 🏗️ Arquitectura del proyecto
 
-```text
-change-email/
+```
+Professional-Email-Rewriter/
 │
 ├── index.html
 │
@@ -68,20 +123,29 @@ change-email/
 │   ├── css/
 │   │   └── style.css
 │   │
-│   ├── js/
-│   │   └── script.js
+│   ├── img/
 │   │
-│   └── img/
-│       └── logo.png
+│   └── js/
+│       │
+│       ├── app.js
+│       ├── config.js
+│       │
+│       ├── services/
+│       │   ├── ollama.service.js
+│       │   └── pdf.service.js
+│       │
+│       └── ui/
+│           ├── dom.elements.js
+│           ├── stats.ui.js
+│           ├── theme.ui.js
+│           └── toast.ui.js
 │
 └── README.md
 ```
 
 ---
 
-# 🏗️ Arquitectura
-
-La aplicación está organizada separando responsabilidades para facilitar el mantenimiento.
+# 🧩 Arquitectura de la aplicación
 
 ```
 Usuario
@@ -90,25 +154,54 @@ Usuario
 Interfaz (HTML)
     │
     ▼
-Eventos
+app.js
+    │
+    ├───────────────┐
+    ▼               ▼
+Servicios         Componentes UI
+    │               │
+    ▼               ▼
+Ollama API     Toast, Tema,
+Local          Estadísticas
     │
     ▼
-Lógica principal
-(transformEmail)
-    │
-    ▼
-Servicio
-(callOllama)
-    │
-    ▼
-API Local de Ollama
-    │
-    ▼
-Respuesta
+Respuesta IA
     │
     ▼
 Actualización de la interfaz
 ```
+
+La aplicación sigue una separación de responsabilidades para facilitar su mantenimiento:
+
+* **app.js** → Orquesta el flujo principal.
+* **config.js** → Configuración global.
+* **services/** → Comunicación con servicios externos.
+* **ui/** → Gestión exclusiva de la interfaz.
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript ES6+
+
+## APIs del navegador
+
+* Fetch API
+* Clipboard API
+* LocalStorage API
+
+## Inteligencia Artificial
+
+* Ollama
+* Llama 3.2
+
+## Librerías
+
+* html2pdf.js
 
 ---
 
@@ -117,18 +210,12 @@ Actualización de la interfaz
 ## 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU-USUARIO/change-email.git
+git clone https://github.com/AlejandraB-Romero/Professional-Email-Rewriter.git
 ```
-
----
 
 ## 2. Instalar Ollama
 
-Descarga e instala Ollama desde:
-
 https://ollama.com/
-
----
 
 ## 3. Descargar el modelo
 
@@ -136,77 +223,94 @@ https://ollama.com/
 ollama pull llama3.2
 ```
 
----
-
 ## 4. Iniciar Ollama
 
 ```bash
 ollama serve
 ```
 
-Por defecto la API estará disponible en:
+La API quedará disponible en:
 
 ```
 http://localhost:11434
 ```
 
----
-
 ## 5. Ejecutar la aplicación
 
-Abre el archivo `index.html` en tu navegador.
-
-> También puedes utilizar Visual Studio Code con la extensión **Live Server** para una mejor experiencia durante el desarrollo.
+Abrir `index.html` directamente o utilizar **Live Server** desde Visual Studio Code.
 
 ---
 
-# 💻 Funcionamiento
+# 🚀 Funcionamiento
 
 1. Escribir o pegar un borrador.
-2. Pulsar **Transformar con IA Local**.
-3. La aplicación envía una petición HTTP a Ollama.
-4. El modelo genera una versión profesional del correo.
-5. El usuario puede:
+2. Seleccionar el tono del correo.
+3. Pulsar **Transformar con IA Local**.
+4. La aplicación envía el texto a Ollama mediante una petición HTTP.
+5. El modelo genera una nueva versión del correo.
+6. El usuario puede:
 
    * Copiar el resultado.
-   * Descargarlo en PDF.
-
----
-
-# 📌 Posibles mejoras
-
-* Selección dinámica del modelo de IA.
-* Historial de correos.
-* Modos de escritura (Formal, Comercial, Académico, Técnico...).
-* Traducción automática.
-* Exportación a Word.
-* Configuración personalizada de prompts.
-* Modo oscuro.
-* Soporte para múltiples idiomas.
+   * Descargarlo como PDF.
 
 ---
 
 # 📚 Conceptos practicados
 
-Este proyecto me ha permitido practicar:
+Durante el desarrollo de este proyecto se han aplicado conceptos como:
 
 * Manipulación del DOM.
-* Organización del código por responsabilidades.
+* Organización modular del código.
 * Programación asíncrona (`async/await`).
-* Consumo de APIs mediante `fetch`.
+* Consumo de APIs REST mediante `fetch`.
 * Gestión de estados de la interfaz.
 * Manejo de errores.
-* Refactorización de código.
-* Animaciones CSS.
-* Experiencia de usuario (UX).
+* Persistencia con LocalStorage.
+* Arquitectura basada en separación de responsabilidades.
+* Componentes reutilizables.
+* Diseño Responsive.
+* Experiencia de Usuario (UX).
 
 ---
 
-# 📄 Licencia
+# 🔮 Mejoras futuras
 
-Este proyecto ha sido desarrollado con fines educativos y de aprendizaje como parte de mi formación en **Desarrollo de Aplicaciones Web (DAW)**.
+* Selección dinámica del modelo de IA.
+* Traducción automática.
+* Historial de correos.
+* Plantillas personalizadas.
+* Soporte para múltiples idiomas.
+* Exportación a Word (.docx).
+* Configuración editable de prompts.
+* Autoguardado del borrador.
+* Contador de tiempo de generación.
+* Docker para facilitar el despliegue.
 
-Se permite utilizar el código como referencia indicando la autoría correspondiente.
+---
+
+# 💡 Motivación
+
+Este proyecto nace como parte de mi proceso de aprendizaje en **Desarrollo de Aplicaciones Web (DAW)** con el objetivo de profundizar en JavaScript moderno, el consumo de APIs y la integración de modelos de Inteligencia Artificial ejecutados de forma local mediante Ollama.
+
+Además del funcionamiento de la aplicación, el proyecto pone especial atención en la organización del código, la mantenibilidad y la experiencia de usuario.
+
+---
+
+# 🎯 Competencias demostradas
+
+Con este proyecto he puesto en práctica:
+
+* Desarrollo de aplicaciones web con HTML5, CSS3 y JavaScript (ES6+).
+* Consumo de APIs REST mediante `fetch`.
+* Programación asíncrona con `async/await`.
+* Organización modular del código.
+* Separación de responsabilidades (UI, Servicios, Configuración y Aplicación).
+* Manipulación del DOM.
+* Persistencia de datos mediante LocalStorage.
+* Gestión de estados de la interfaz de usuario.
+* Integración de Inteligencia Artificial Local mediante Ollama.
+* Diseño responsive y experiencia de usuario (UX).
+* Uso de Git y GitHub para el control de versiones.
 
 ---
 
@@ -214,6 +318,15 @@ Se permite utilizar el código como referencia indicando la autoría correspondi
 
 **Alejandra Begoña Romero Pérez**
 
-Estudiante de Desarrollo de Aplicaciones Web (DAW)
+🎓 Estudiante de Desarrollo de Aplicaciones Web (DAW)
 
-GitHub: https://github.com/AlejandraB-Romero
+💼 Interesada en Desarrollo Web Full Stack e Inteligencia Artificial aplicada al desarrollo de software.
+
+GitHub:
+**https://github.com/AlejandraB-Romero**
+
+---
+
+# 📄 Licencia
+
+Este proyecto se distribuye bajo la licencia **MIT**.

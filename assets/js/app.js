@@ -1,10 +1,10 @@
 import { CONFIG } from './config.js';
 import { DOM } from './ui/dom.elements.js';
 import { ToastUI } from './ui/toast.ui.js';
-import { ThemeUI } from './ui/theme.ui.js';
+import { ThemeUI } from './ui/theme.controller.js';
 import { StatsUI } from './ui/stats.ui.js';
-import { OllamaService } from './services/ollama.services.js';
-import { PdfService } from './services/pdf.services.js';
+import { OllamaService } from './services/ollama.service.js';
+import { PdfService } from './services/pdf.service.js';
 
 // ==========================================
 // INICIALIZACIÓN
