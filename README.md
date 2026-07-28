@@ -86,7 +86,7 @@ Este proyecto utiliza las siguientes dependencias externas:
 
 ## Pantalla principal
 
-> Añadir captura aquí.
+![Home](home.png)
 
 ```
 assets/img/home.png
@@ -94,7 +94,7 @@ assets/img/home.png
 
 ## Resultado generado
 
-> Añadir captura aquí.
+![Result](result.png)
 
 ```
 assets/img/result.png
