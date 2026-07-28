@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Descripción del sitio">
+  <meta name="keywords" content="e-mail, correo, texto, corrector">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nombre del autor">
+  <meta name="copyright" content="2023, Alejandra Begoña Romero Pérez">
+  <meta name="robots" content="index,follow">
+  <title>Professional Email Rewriter | Corrector con IA Local (Ollama)</title>
+  
+  <!-- Librería para la generación de PDF desde el navegador -->
+   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+  <!-- Cabecera Superior con Modo Oscuro a la izquierda y Versión a la derecha -->
+<div class="top-header">
+  <button id="themeToggleBtn" class="theme-toggle-btn">
+    <span id="themeIcon">🌙</span>
+    <span id="themeText">Modo Oscuro</span>
+  </button>
+  <div class="brand-version">
+    <span class="brand-name">Professional Email Rewriter</span>
+    <span class="version-tag">v1.0.0</span>
+  </div>
+</div>
+
+<div class="app-container">
+  <!-- El resto del HTML se mantiene igual -->
+  ...
+<!-- Componente Visual para Mensajes de Error/Notificaciones (Sin usar alert) -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <div class="app-container">
+    <header>
+      <h1>Professional Email Rewriter</h1>
+      <p>Redacción e-mail profesional impulsada por tu IA Local</p>
+      <div class="status-badge">🟢 Conectado a Ollama (Llama 3.2 Local)</div>
+    </header>
+
+    <main class="card">
+      <div class="section-header">
+        <label for="userEmail">Borrador de entrada:</label>
+        <div class="top-actions">
+          <button id="pasteBtn" class="btn-secondary">📋 Pegar</button>
+        </div>
+      </div>
+
+      <textarea id="userEmail" placeholder="Escribe tu texto borrador aquí... Ej: ola jefe mañan no voy xk toy enfermo me pasas las notas..."></textarea>
+
+      <!-- En index.html, justo encima del botón de transformar -->
+<div class="form-group">
+  <label for="toneSelect">Selecciona el tono del correo:</label>
+  <select id="toneSelect" class="tone-select">
+    <option value="profesional">🏢 Profesional / Ejecutivo</option>
+    <option value="casual">😊 Casual / Cercano</option>
+    <option value="comercial">💼 Comercial / Ventas</option>
+    <option value="legal">⚖️ Legal / Formal</option>
+    <option value="academico">🎓 Académico / Universitario</option>
+    <option value="soporte">🛠️ Soporte Técnico</option>
+  </select>
+</div>
+      <!-- Botón Principal con Spinner de Carga Integrado -->
+      <button id="transformBtn" class="btn-primary">
+        <span id="btnText">🦙 Transformar con IA Local</span>
+        <div id="btnSpinner" class="spinner hidden"></div>
+      </button>
+
+      <div id="resultContainer" class="result-container">
+        <div class="result-header">
+          <h3>Resultado Mejorado</h3>
+          <button id="copyBtn" class="btn-secondary" disabled>📄 Copiar</button>
+        </div>
+
+        <div id="pdfArea">
+          <div id="resultContent" class="result-content placeholder">Escribe un borrador arriba y pulsa "Transformar con IA Local"...</div>
+        </div>
+
+        <button id="downloadPdfBtn" class="btn-pdf" disabled>📥 Descargar en PDF</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Script Principal Externalizado -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
